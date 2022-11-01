@@ -3,11 +3,11 @@
     <v-row no-gutters>
       <v-col sm="10" class="mx-auto">
         <v-card class="pa-5">
-          <v-card-title>Add New Hero</v-card-title>
+          <v-card-title>Edit Hero</v-card-title>
           <v-divider></v-divider>
           <v-form
             ref="form"
-            @submit.prevent="submitForm"
+            @submit.prevent="updateForm"
             class="pa-5"
             enctype="multipart/form-data"
           >
@@ -64,8 +64,8 @@
                   label="Content"
                   variant="underlined"
                   rows="1"
-                  v-model="hero.content"
                   :rules="rules"
+                  v-model="hero.content"
                 ></v-textarea
               ></v-col>
             </v-row>
@@ -76,10 +76,10 @@
               @change="selectFile"
               multiple
               ref="file"
-              :rules="rules"
             ></v-file-input>
+            <v-img :src="`/${hero.avatar}`" width="150"></v-img>
             <v-btn type="submit" class="mt-3" color="info" variant="tonal"
-              >Add Hero</v-btn
+              >Update Hero</v-btn
             >
           </v-form>
         </v-card>
@@ -126,7 +126,7 @@ export default {
       content: "",
       avatar: "",
     });
-    const rules = ref([(value) => !!value || "Required !!!"]);
+    const rules = ref([(value) => !!value || "Required!"]);
     const router = useRouter();
     const avatar = ref("");
     return {
@@ -137,12 +137,16 @@ export default {
       rules,
     };
   },
+  async created() {
+    const response = await Hero.getHero(this.$route.params.id);
+    this.hero = response;
+  },
   methods: {
     selectFile(file) {
       this.image = this.$refs.file.files[0];
       console.log(this.image);
     },
-    async submitForm() {
+    async updateForm() {
       const formData = new FormData();
       formData.append("avatar", this.image);
       formData.append("name", this.hero.name);
@@ -151,8 +155,9 @@ export default {
       formData.append("level", this.hero.level);
       formData.append("country", this.hero.country);
       formData.append("content", this.hero.content);
+      formData.append("old_image", this.hero.avatar);
       if (this.$refs.form.validate()) {
-        const response = await Hero.postHero(formData);
+        const response = await Hero.updateHero(this.$route.params.id, formData);
         this.$router.push({
           name: "listhero",
           params: { message: response.message },

@@ -20,17 +20,6 @@ const heroSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  passive: String,
-  Q: String,
-  W: String,
-  E: String,
-  R: String,
-  skills: [
-    {
-      type: mongoose.Types.ObjectId,
-      ref: "skill",
-    },
-  ],
   content: {
     type: String,
   },

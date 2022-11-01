@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" class="v-theme-dark">
     <v-navigation-drawer v-model="drawer">
       <v-list-item>
         <v-list-item-title> @Admintrations </v-list-item-title>
@@ -13,13 +13,9 @@
             :key="i"
             :value="item"
             active-color="primary"
-            :to="item.link"
+            :to="{ path: item.link }"
             link
           >
-            <template v-slot:prepend>
-              <v-icon :icon="item.icon"></v-icon>
-            </template>
-
             <v-list-item-title v-text="item.text"></v-list-item-title>
           </v-list-item>
         </v-list>
@@ -28,14 +24,6 @@
 
     <v-app-bar>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-list-item-content>
-        <v-text-field
-          v-model="searchTerm"
-          placeholder="Search"
-          @input="searchFruits"
-        ></v-text-field>
-      </v-list-item-content>
     </v-app-bar>
 
     <v-main>
@@ -45,15 +33,28 @@
 </template>
 
 <script>
+import { storeToRefs } from "pinia";
+import { useStore } from "../stores/useStore";
+
 export default {
-  setup() {},
+  setup() {
+    const store = useStore();
+    return {
+      ...storeToRefs(store),
+    };
+  },
   data: () => ({
     items: [
-      { text: "Heros", icon: "mdi-clock", link: "/admin/hero/listhero" },
+      { text: "Heros", icon: "mdi-clock", link: "/admin/hero" },
       { text: "Skins", icon: "mdi-account", link: "/admin/skins" },
-      { text: "Conversions", icon: "mdi-flag", link: "/" },
     ],
     drawer: null,
   }),
 };
 </script>
+
+<style scoped>
+#search {
+  width: 300px;
+}
+</style>

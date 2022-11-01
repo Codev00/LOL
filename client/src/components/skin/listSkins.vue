@@ -29,7 +29,7 @@
           <v-btn
             color="info"
             variant="tonal"
-            @click="this.$router.push({ name: 'addhero' })"
+            @click="this.$router.push({ name: 'addskins' })"
             >Add</v-btn
           >
         </div>
@@ -58,21 +58,17 @@
 
 <script>
 import apiHero from "../../services/api.hero";
-import { storeToRefs } from "pinia";
-import { useStore } from "../../stores/useStore";
+
 export default {
   data() {
     return {
       heros: [],
       loading: false,
       loaded: false,
-      hero: [],
     };
   },
   async created() {
     this.heros = await apiHero.getAllHero();
-    this.sortBy(this.heros.name);
-    console.log(this.sortBy(this.heros.name));
   },
   methods: {
     onClick() {
@@ -82,9 +78,6 @@ export default {
         this.loading = false;
         this.loaded = true;
       }, 2000);
-    },
-    sortBy(prop) {
-      this.heros.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
     },
   },
 };

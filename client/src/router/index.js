@@ -5,6 +5,13 @@ import HomeView from "../views/HomeView.vue";
 import AdminView from "../views/AdminView.vue";
 import ListHero from "../components/hero/listHero.vue";
 import AddHero from "../components/hero/addHero.vue";
+import Detail from "../components/hero/Hero.vue";
+import EditHero from "../components/hero/editHero.vue";
+//Skins
+import ListSkin from "../components/skin/listSkins.vue";
+import AddSkins from "../components/skin/addSkins.vue";
+import DetailSkin from "../components/skin/Skins.vue";
+import EditSkins from "../components/skin/editSkins.vue";
 // Login
 import LoginView from "../views/Login.vue";
 
@@ -29,18 +36,55 @@ const router = createRouter({
       component: AdminView,
       children: [
         {
-          path: "listhero",
+          path: "",
           name: "listhero",
           component: ListHero,
         },
         {
-          path: "addhero",
+          path: "add",
           name: "addhero",
           component: AddHero,
         },
+        {
+          path: "detail/:id",
+          name: "detail",
+          component: Detail,
+        },
+        {
+          path: "edit/:id",
+          name: "edithero",
+          component: EditHero,
+        },
       ],
     },
-
+    // Skins
+    {
+      path: "/admin",
+      name: "skins",
+      component: AdminView,
+      children: [
+        {
+          path: "skins",
+          name: "listskins",
+          component: ListSkin,
+        },
+        {
+          path: "add",
+          name: "addskins",
+          component: AddSkins,
+        },
+        {
+          path: "detail/:id",
+          name: "detailskins",
+          component: DetailSkin,
+        },
+        {
+          path: "edit/:id",
+          name: "editskins",
+          component: EditSkins,
+        },
+      ],
+    },
     // Login
     {
       path: "/login",

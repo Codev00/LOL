@@ -1,18 +1,18 @@
-const Hero = require("../models/hero");
+const Skin = require("../models/skin");
 const fs = require("fs");
 const Sv = require("../services/service");
 
-module.exports = class heroAPI {
-  static async getHero(req, res) {
+module.exports = class skinAPI {
+  static async getSkin(req, res) {
     const id = req.params.id;
     try {
-      const hero = await Hero.findById(id).populate("skins");
-      res.status(200).json(hero);
+      const skin = await Skin.findById(id).populate("hero");
+      res.status(200).json(skin);
     } catch (error) {
       res.status(404).json({ message: error.message });
     }
   }
-  static async getAllHero(req, res) {
+  static async getAllSkin(req, res) {
     let doc = [];
     try {
       const service = new Sv();
@@ -27,46 +27,46 @@ module.exports = class heroAPI {
       res.status(404).json({ message: error.message });
     }
   }
-  static async createHero(req, res) {
-    const hero = req.body;
+  static async createSkin(req, res) {
+    const skin = req.body;
     const imagename = req.file.filename;
-    hero.avatar = imagename;
+    skin.avatar = imagename;
     try {
-      await Hero.create(hero);
+      await Skin.create(skin);
       res.status(200).json({ message: "Create Successfully!!" });
     } catch (error) {
       res.status(404).json({ message: error.message });
     }
   }
-  static async updateHero(req, res) {
+  static async updateSkin(req, res) {
     const id = req.params.id;
     let new_image = "";
     if (req.file) {
       new_image = req.file.filename;
       try {
-        fs.unlinkSync("./uploads/" + req.body.old_image);
+        fs.unlinkSync("./skins/" + req.body.old_image);
       } catch (error) {
         console.log(error);
       }
     } else {
       new_image = req.body.old_image;
     }
-    const newHero = req.body;
-    newHero.avatar = new_image;
+    const newskin = req.body;
+    newskin.avatar = new_image;
     try {
-      await Hero.findByIdAndUpdate(id, newHero);
+      await Skin.findByIdAndUpdate(id, newskin);
       res.status(200).json({ message: "Update Successfully!!!" });
     } catch (error) {
       res.status(404).json({ message: error.message });
     }
   }
-  static async deleteHero(req, res) {
+  static async deleteSkin(req, res) {
     const id = req.params.id;
     try {
-      const result = await Hero.findByIdAndDelete(id);
+      const result = await Skin.findByIdAndDelete(id);
       if (result.avatar != "") {
         try {
-          fs.unlinkSync("./uploads/" + result.avatar);
+          fs.unlinkSync("./skins/" + result.avatar);
         } catch (error) {
           console.log(error);
         }
