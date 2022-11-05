@@ -67,7 +67,7 @@
               <h3><strong>Skins: </strong></h3>
             </v-col>
             <v-col sm="10">
-              <h3>{{ hero.skins }}</h3>
+              <h3 v-for="skin in hero.skins">{{ skin.name }}</h3>
             </v-col>
           </v-row>
           <v-row class="options" justify="center">

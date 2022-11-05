@@ -34,15 +34,8 @@
 
 <script>
 import { storeToRefs } from "pinia";
-import { useStore } from "../stores/useStore";
 
 export default {
-  setup() {
-    const store = useStore();
-    return {
-      ...storeToRefs(store),
-    };
-  },
   data: () => ({
     items: [
       { text: "Heros", icon: "mdi-clock", link: "/admin/hero" },

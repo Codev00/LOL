@@ -12,7 +12,6 @@
       <v-col>
         <v-card-text>
           <v-text-field
-            :loading="loading"
             density="compact"
             variant="solo"
             label="Search Heros"
@@ -58,34 +57,15 @@
 
 <script>
 import apiHero from "../../services/api.hero";
+import { useHero } from "../../stores/heroStore";
 import { storeToRefs } from "pinia";
-import { useStore } from "../../stores/useStore";
 export default {
-  data() {
+  setup() {
+    const useHeroStore = useHero();
+    useHeroStore.getAllHero();
     return {
-      heros: [],
-      loading: false,
-      loaded: false,
-      hero: [],
+      ...storeToRefs(useHeroStore),
     };
-  },
-  async created() {
-    this.heros = await apiHero.getAllHero();
-    this.sortBy(this.heros.name);
-    console.log(this.sortBy(this.heros.name));
-  },
-  methods: {
-    onClick() {
-      this.loading = true;
-
-      setTimeout(() => {
-        this.loading = false;
-        this.loaded = true;
-      }, 2000);
-    },
-    sortBy(prop) {
-      this.heros.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
-    },
   },
 };
 </script>

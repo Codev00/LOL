@@ -12,7 +12,6 @@
       <v-col>
         <v-card-text>
           <v-text-field
-            :loading="loading"
             density="compact"
             variant="solo"
             label="Search Heros"
@@ -36,19 +35,19 @@
       </v-col>
     </v-row>
     <v-row justify="space-evenly">
-      <v-col sm="auto" class="pa-3" v-for="hero in heros" :key="hero._id">
+      <v-col sm="auto" class="pa-3" v-for="skin in skins" :key="skin._id">
         <v-card
           class="pa-1"
-          :to="{ name: 'detail', params: { id: hero._id, name: hero.name } }"
+          :to="{ name: 'detailskins', params: { id: skin._id } }"
         >
           <img
-            height="250"
-            width="200"
-            :src="`/${hero.avatar}`"
-            alt="`{{hero.name}}`"
+            height="110"
+            width="220"
+            :src="`/${skin.image}`"
+            alt="`{{skin.name}}`"
           />
           <v-card-title class="headline">
-            {{ hero.name }}
+            {{ skin.name }}
           </v-card-title>
         </v-card>
       </v-col>
@@ -57,28 +56,16 @@
 </template>
 
 <script>
-import apiHero from "../../services/api.hero";
-
+import { useSkins } from "../../stores/skinStore";
+import { storeToRefs } from "pinia";
 export default {
-  data() {
+  setup() {
+    const useSkinStore = useSkins();
+    useSkinStore.getAllSkins();
+    console.log(useSkinStore.skins);
     return {
-      heros: [],
-      loading: false,
-      loaded: false,
+      ...storeToRefs(useSkinStore),
     };
-  },
-  async created() {
-    this.heros = await apiHero.getAllHero();
-  },
-  methods: {
-    onClick() {
-      this.loading = true;
-
-      setTimeout(() => {
-        this.loading = false;
-        this.loaded = true;
-      }, 2000);
-    },
   },
 };
 </script>

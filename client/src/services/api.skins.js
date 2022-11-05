@@ -1,24 +1,24 @@
 import axios from "axios";
 
-const url = "/api/user";
+const url = "/api/skins";
 export default class heroAPI {
-  static async getAllUser() {
+  static async getAllSkins() {
     const res = await axios.get(url);
     return res.data;
   }
-  static async getUser(id) {
+  static async getSkins(id) {
     const res = await axios.get(`${url}/${id}`);
     return res.data;
   }
-  static async postUser(hero) {
-    const res = await axios.post(url, hero);
+  static async postSkins(post) {
+    const res = await axios.post(url, post);
     return res.data;
   }
-  static async updateUser(id, hero) {
-    const res = await axios.put(`${url}/${id}`, hero);
+  static async updateSkins(id, post) {
+    const res = await axios.put(`${url}/${id}`, post);
     return res.data;
   }
-  static async deleteUser(id) {
+  static async deleteSkins(id) {
     const res = await axios.delete(`${url}/${id}`);
     return res.data;
   }

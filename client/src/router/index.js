@@ -8,7 +8,7 @@ import AddHero from "../components/hero/addHero.vue";
 import Detail from "../components/hero/Hero.vue";
 import EditHero from "../components/hero/editHero.vue";
 //Skins
-import ListSkin from "../components/skin/listSkins.vue";
+import ListSkins from "../components/skin/listSkins.vue";
 import AddSkins from "../components/skin/addSkins.vue";
 import DetailSkin from "../components/skin/Skins.vue";
 import EditSkins from "../components/skin/editSkins.vue";
@@ -59,14 +59,14 @@ const router = createRouter({
     },
     // Skins
     {
-      path: "/admin",
+      path: "/admin/skins",
       name: "skins",
       component: AdminView,
       children: [
         {
-          path: "skins",
+          path: "",
           name: "listskins",
-          component: ListSkin,
+          component: ListSkins,
         },
         {
           path: "add",
