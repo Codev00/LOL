@@ -1,12 +1,13 @@
 const Skin = require("../models/skin");
 const fs = require("fs");
 const Sv = require("../services/service");
+const Hero = require("../models/hero");
 
 module.exports = class skinAPI {
   static async getSkin(req, res) {
     const id = req.params.id;
     try {
-      const skin = await Skin.findById(id).populate("hero");
+      const skin = await Skin.findById(id);
       res.status(200).json(skin);
     } catch (error) {
       res.status(404).json({ message: error.message });
@@ -20,7 +21,7 @@ module.exports = class skinAPI {
       if (name) {
         doc = await service.findByName(name);
       } else {
-        doc = await service.find({});
+        doc = await service.finds({});
       }
       res.status(200).json(doc);
     } catch (error) {
@@ -30,9 +31,13 @@ module.exports = class skinAPI {
   static async createSkin(req, res) {
     const skin = req.body;
     const imagename = req.file.filename;
-    skin.avatar = imagename;
+    skin.image = imagename;
     try {
-      await Skin.create(skin);
+      const saveSkin = await Skin.create(skin);
+      if (req.body.hero) {
+        const hero = Hero.findById(req.body.hero);
+        await hero.updateOne({ $push: { skins: saveSkin._id } });
+      }
       res.status(200).json({ message: "Create Successfully!!" });
     } catch (error) {
       res.status(404).json({ message: error.message });
@@ -52,7 +57,7 @@ module.exports = class skinAPI {
       new_image = req.body.old_image;
     }
     const newskin = req.body;
-    newskin.avatar = new_image;
+    newskin.image = new_image;
     try {
       await Skin.findByIdAndUpdate(id, newskin);
       res.status(200).json({ message: "Update Successfully!!!" });
@@ -64,9 +69,9 @@ module.exports = class skinAPI {
     const id = req.params.id;
     try {
       const result = await Skin.findByIdAndDelete(id);
-      if (result.avatar != "") {
+      if (result.image != "") {
         try {
-          fs.unlinkSync("./skins/" + result.avatar);
+          fs.unlinkSync("./skins/" + result.image);
         } catch (error) {
           console.log(error);
         }

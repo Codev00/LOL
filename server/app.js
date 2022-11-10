@@ -23,6 +23,6 @@ const data = mongoose
   .catch((err) => console.log(err));
 
 // router
-app.use("/api/", router);
+app.use("/api", router);
 //   start server
 app.listen(PORT, () => console.log(`Server is running at host ${PORT}`));

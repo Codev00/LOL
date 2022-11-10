@@ -1,24 +1,24 @@
 import axios from "axios";
 
-const url = "/api/user";
+const url = "/api/hero";
 export default class heroAPI {
-  static async getAllUser() {
+  static async getAllHero() {
     const res = await axios.get(url);
     return res.data;
   }
-  static async getUser(id) {
+  static async getHero(id) {
     const res = await axios.get(`${url}/${id}`);
     return res.data;
   }
-  static async postUser(hero) {
+  static async postHero(hero) {
     const res = await axios.post(url, hero);
     return res.data;
   }
-  static async updateUser(id, hero) {
+  static async updateHero(id, hero) {
     const res = await axios.put(`${url}/${id}`, hero);
     return res.data;
   }
-  static async deleteUser(id) {
+  static async deleteHero(id) {
     const res = await axios.delete(`${url}/${id}`);
     return res.data;
   }

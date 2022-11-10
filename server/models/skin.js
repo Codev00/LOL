@@ -8,11 +8,9 @@ const skinSchema = mongoose.Schema({
   image: {
     type: String,
   },
-  hero: [
-    {
-      type: mongoose.Types.ObjectId,
-      ref: "hero",
-    },
-  ],
+  hero: {
+    type: mongoose.Types.ObjectId,
+    ref: "hero",
+  },
 });
 module.exports = mongoose.model("skin", skinSchema);

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Hero = require("../controllers/api.hero");
 const Skin = require("../controllers/api.skin");
+const User = require("../controllers/api.user");
 const multer = require("multer");
 // multer middleware
 let storage = multer.diskStorage({
@@ -13,21 +14,12 @@ let storage = multer.diskStorage({
   },
 });
 
-let skins = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./skins");
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.fieldname + "_" + file.originalname);
-  },
-});
-
 let upload = multer({
   storage: storage,
 }).single("avatar");
 let skin = multer({
-  storage: skins,
-}).single("skin");
+  storage: storage,
+}).single("skins");
 
 router.route("/hero").get(Hero.getAllHero).post(upload, Hero.createHero);
 
@@ -38,11 +30,20 @@ router
   .delete(Hero.deleteHero);
 
 // Skins
-router.route("/skin").get(Skin.getAllSkin).post(skin, Skin.createSkin);
+router.route("/skins").get(Skin.getAllSkin).post(skin, Skin.createSkin);
 
 router
-  .route("/skin/:id")
+  .route("/skins/:id")
   .get(Skin.getSkin)
   .put(skin, Skin.updateSkin)
   .delete(Skin.deleteSkin);
+
+// User
+router.route("/user").get(User.getAllUser).post(User.createUser);
+
+router
+  .route("/user/:id")
+  .get(User.getUser)
+  .put(User.updateUser)
+  .delete(User.deleteUser);
 module.exports = router;

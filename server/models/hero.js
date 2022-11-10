@@ -26,6 +26,9 @@ const heroSchema = mongoose.Schema({
   avatar: {
     type: String,
   },
+  play: {
+    type: String,
+  },
   skins: [
     {
       type: mongoose.Types.ObjectId,

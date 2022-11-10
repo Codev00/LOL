@@ -12,6 +12,11 @@ import ListSkins from "../components/skin/listSkins.vue";
 import AddSkins from "../components/skin/addSkins.vue";
 import DetailSkin from "../components/skin/Skins.vue";
 import EditSkins from "../components/skin/editSkins.vue";
+// Home
+import Champions from "../components/home/Champions.vue";
+import Esport from "../components/home/Esport.vue";
+import About from "../components/home/About.vue";
+import Champion from "../components/home/Champion.vue";
 // Login
 import LoginView from "../views/Login.vue";
 
@@ -20,15 +25,37 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "/home",
+      redirect: "/Home/Champions",
+    },
+    {
+      path: "/Home",
+      name: "Home",
+      component: HomeView,
       children: [
         {
-          path: "/home",
-          name: "home",
-          component: HomeView,
+          path: "Champions",
+          name: "champions",
+          component: Champions,
+        },
+        {
+          path: "Esport",
+          name: "esport",
+          component: Esport,
+        },
+        {
+          path: "About",
+          name: "about",
+          component: About,
+        },
+        {
+          path: ":name",
+          name: "detailChampion",
+          component: Champion,
+          props: true,
         },
       ],
     },
+
     // Admin
     {
       path: "/admin/hero",

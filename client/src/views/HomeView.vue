@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <Header />
+    <Header></Header>
+    <RouterView></RouterView>
   </div>
 </template>
 
 <script>
+import { RouterLink, RouterView } from "vue-router";
 import { defineComponent } from "vue";
 import Header from "../components/home/Header.vue";
 
@@ -18,6 +20,6 @@ export default defineComponent({
 
 <style scoped>
 .home {
-  background: url(/Background.jpg) no-repeat center center fixed;
+  height: 100%;
 }
 </style>
