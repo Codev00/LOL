@@ -1,25 +1,24 @@
 import axios from "axios";
 
-const url = "/api/user";
 export default class userAPI {
-  static async getAllUser() {
-    const res = await axios.get(url);
+  static async register(data) {
+    const res = await axios.post("/api/users", data);
     return res.data;
   }
-  static async getUser(id) {
-    const res = await axios.get(`${url}/${id}`);
+  static async login(data) {
+    const res = await axios.post("/api/users/login", data);
     return res.data;
   }
-  static async postUser(user) {
-    const res = await axios.post(url, user);
+  static async account() {
+    const res = await axios.get("/api/users/account", {
+      headers: {
+        Authorization: "Beazer " + localStorage.getItem("token"),
+      },
+    });
     return res.data;
   }
-  static async updateUser(id, user) {
-    const res = await axios.put(`${url}/${id}`, user);
-    return res.data;
-  }
-  static async deleteUser(id) {
-    const res = await axios.delete(`${url}/${id}`);
+  static async logout(token) {
+    const res = await axios.post("/api/users/account/logout", token);
     return res.data;
   }
 }

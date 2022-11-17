@@ -19,6 +19,8 @@ import About from "../components/home/About.vue";
 import Champion from "../components/home/Champion.vue";
 // Login
 import LoginView from "../views/Login.vue";
+import Login from "../components/login/Login.vue";
+import Register from "../components/login/Register.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -114,9 +116,25 @@ const router = createRouter({
     },
     // Login
     {
-      path: "/login",
+      path: "/Login",
+      redirect: "/Login/Sign-in",
+    },
+    {
+      path: "/Account",
       name: "login",
       component: LoginView,
+      children: [
+        {
+          path: "Sign-in",
+          name: "loginview",
+          component: Login,
+        },
+        {
+          path: "Sign-up",
+          name: "registerview",
+          component: Register,
+        },
+      ],
     },
   ],
 });

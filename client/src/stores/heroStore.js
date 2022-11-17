@@ -15,7 +15,6 @@ export const useHero = defineStore("hero", () => {
   async function getHero(id) {
     try {
       hero.value = await apiHero.getHero(id);
-      console.log(hero.value);
     } catch (error) {
       console.log(error);
     }

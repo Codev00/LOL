@@ -8,5 +8,8 @@ const config = {
   dba: {
     url: "mongodb+srv://rionas:kid122796@app.j9us0af.mongodb.net/?retryWrites=true&w=majority",
   },
+  jwt: {
+    key: "rionas",
+  },
 };
 module.exports = config;

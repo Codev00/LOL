@@ -14,7 +14,10 @@
         <router-link :to="{ name: 'about' }">About</router-link>
       </div>
     </div>
-    <div class="user">
+    <div class="login" v-if="!login">
+      <RouterLink :to="{ name: 'loginview' }"><span>Log In</span></RouterLink>
+    </div>
+    <div class="user" v-else>
       <img src="/logo1.png" width="60" alt="avatar" />
       <div class="options">
         <div class="profile item">Profile</div>
@@ -26,7 +29,16 @@
 </template>
 
 <script>
-export default {};
+import { storeToRefs } from "pinia";
+import { useUser } from "../../stores/userStore";
+export default {
+  setup() {
+    const userStore = useUser();
+    return {
+      ...storeToRefs(userStore),
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -68,6 +80,21 @@ export default {};
   text-decoration: none;
   color: aliceblue;
 }
+/* Login */
+.login {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.login a {
+  text-decoration: none;
+  border: 1px solid yellowgreen;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-family: "Times New Roman", Times, serif;
+  color: aliceblue;
+}
+
 /* user */
 .user {
   position: relative;
@@ -93,6 +120,7 @@ export default {};
   top: 80px;
   border-radius: 4px;
   display: none;
+  transition: all 0.2s linear;
 }
 .user .options:before {
   content: "";
@@ -108,6 +136,7 @@ export default {};
   padding: 5px 10px;
   cursor: pointer;
   font-weight: bolder;
+  transition: all 0.2s linear;
 }
 .user .options .item:first-child {
   position: relative;
