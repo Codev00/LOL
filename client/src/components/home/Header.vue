@@ -5,7 +5,7 @@
     </div>
     <div class="nav-bar">
       <div class="nav-items">
-        <router-link :to="{ name: 'champions' }">Champions</router-link>
+        <router-link :to="{ name: 'champions' }">Heros</router-link>
       </div>
       <div class="nav-items">
         <router-link :to="{ name: 'esport' }">Esport</router-link>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="login" v-if="!login">
-      <RouterLink :to="{ name: 'loginview' }"><span>Log In</span></RouterLink>
+      <a href="#"><span>Log In</span></a>
     </div>
     <div class="user" v-else>
       <img src="/logo1.png" width="60" alt="avatar" />
@@ -38,6 +38,14 @@ export default {
       ...storeToRefs(userStore),
     };
   },
+  // methods: {
+  //   logout() {
+  //     localStorage.clear();
+  //     this.userStore.login = false;
+  //     this.userStore.logout(this.userStore.user.token);
+  //     this.$router.push("/");
+  //   },
+  // },
 };
 </script>
 

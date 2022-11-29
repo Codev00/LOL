@@ -105,6 +105,7 @@ export default {
         };
         const response = await apiUser.login(data);
         localStorage.setItem("token", response.token);
+        userStore.account();
         userStore.login = true;
         router.push("/");
       } catch (error) {

@@ -1,9 +1,56 @@
+<script>
+import { storeToRefs } from "pinia";
+import { onMounted, onUpdated, ref } from "vue";
+import { useRoute } from "vue-router";
+import { useHero } from "../../stores/heroStore";
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import "@splidejs/vue-splide/css";
+import "@splidejs/splide/css/skyblue";
+
+export default {
+  components: {
+    Splide,
+    SplideSlide,
+  },
+  setup() {
+    const route = useRoute();
+    const id = route.query.id;
+    const heroStore = useHero();
+
+    const getChampion = async () => {
+      await heroStore.getHero(id);
+    };
+    getChampion();
+    onUpdated(() => {
+      getChampion();
+    });
+    const options = {
+      tyep: "loop",
+      perMove: 1,
+      padding: "14%",
+      autoheight: true,
+      autowidth: true,
+      rewind: true,
+      speed: 1000,
+      rewindSpeed: 1000,
+      autoplay: true,
+      trimSpace: true,
+    };
+    return {
+      ...storeToRefs(heroStore),
+      id,
+      options,
+    };
+  },
+};
+</script>
+
 <template>
   <div class="champion-page">
     <div class="champions">
       <div class="heading-page">
         <div class="background">
-          <img :src="`/${hero.skins[0].image}`" alt="" />
+          <img :src="`/${hero.skins[0].image}`" alt="Image" />
           <div class="text-box">
             <div class="head">
               <p>
@@ -57,45 +104,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import { storeToRefs } from "pinia";
-import { ref } from "vue";
-import { useRoute } from "vue-router";
-import { useHero } from "../../stores/heroStore";
-import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import "@splidejs/vue-splide/css";
-import "@splidejs/splide/css/skyblue";
-export default {
-  components: {
-    Splide,
-    SplideSlide,
-  },
-  setup() {
-    const route = useRoute();
-    const id = route.query.id;
-    const heroStore = useHero();
-    heroStore.getHero(id);
-    const options = {
-      tyep: "loop",
-      perMove: 1,
-      padding: "14%",
-      autoheight: true,
-      autowidth: true,
-      rewind: true,
-      speed: 1000,
-      rewindSpeed: 1000,
-      autoplay: true,
-      trimSpace: true,
-    };
-    return {
-      ...storeToRefs(heroStore),
-      id,
-      options,
-    };
-  },
-};
-</script>
 
 <style scoped>
 .champions {

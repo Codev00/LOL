@@ -7,6 +7,7 @@ export const useUser = defineStore("user", () => {
   const login = ref(false);
   async function account() {
     user.value = await apiuser.account();
+    console.log(user.value);
   }
 
   return { user, login, account };

@@ -43,7 +43,6 @@ export default {
       champions.value = await apiHero.getAllHero();
     };
     get();
-    console.log(champions.value);
     const detailChampion = (id, name) => {
       router.push({
         name: "detailChampion",
