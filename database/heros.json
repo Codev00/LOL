@@ -1,0 +1,297 @@
+[{
+  "_id": {
+    "$oid": "635d2c808cbd48e3ed7d53ad"
+  },
+  "name": "Yasuo",
+  "title": "Kẻ Bất Dung Thứ",
+  "category": "Đấu Sĩ",
+  "country": "Ionia",
+  "level": "Khó",
+  "content": "Một người Ionia đầy kiên định, chàng kiếm sĩ Yasuo được rèn luyện để sử dụng gió làm vũ khí tấn công kẻ thù. Khi còn trẻ, anh bị kết oan tội sát hại sư phụ—không thể chứng minh mình vô tội, anh buộc phải xuống tay với chính anh trai để tự vệ. Sau này, hung thủ thực sự đã lộ diện, nhưng Yasuo vẫn không thể tha thứ cho bản thân về những gì mình đã làm, và giờ lãng du khắp quê hương, chỉ với ngọn gió dẫn đường.",
+  "avatar": "avatar_Yasuo_0.jpg",
+  "skins": [
+    {
+      "$oid": "6363b4f949c26623eca882d0"
+    },
+    {
+      "$oid": "6363b5ab49c26623eca882d5"
+    },
+    {
+      "$oid": "6363bb7589c0c88ece8d3276"
+    },
+    {
+      "$oid": "6363ca68af65639abc2d8bf9"
+    },
+    {
+      "$oid": "6373786fb8c7d9b18eac9f84"
+    },
+    {
+      "$oid": "637378a9b8c7d9b18eac9f89"
+    },
+    {
+      "$oid": "63737920b8c7d9b18eac9f9e"
+    },
+    {
+      "$oid": "63737930b8c7d9b18eac9fa3"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635d2d328cbd48e3ed7d53b0"
+  },
+  "name": "Yone",
+  "title": "Kẻ Về Từ Cỗi Chết",
+  "category": "Đấu Sĩ",
+  "country": "Ionia",
+  "level": "Khó",
+  "content": "Trong cuộc đời trước kia, anh từng là Yone—người anh trai của Yasuo, và môn đồ nổi tiếng của trường kiếm trong làng. Nhưng sau khi bị hạ sát bởi chính tay người em trai mình, anh đã bị săn đuổi bởi một thực thể tà ác nơi linh giới, và buộc phải hạ gục nó bằng chính lưỡi kiếm của nó. Giờ đây, bị nguyền rủa bởi chiếc mặt nạ gắn chặt lên khuôn mặt mình, Yone không ngừng săn đuổi lũ quỷ dữ nhằm tìm kiếm lời giải cho thứ mà anh đã trở thành.",
+  "avatar": "avatar_Yone_0.jpg",
+  "skins": [
+    {
+      "$oid": "637374ceb8c7d9b18eac9f28"
+    },
+    {
+      "$oid": "63737ed9b8c7d9b18eaca054"
+    },
+    {
+      "$oid": "63737ef2b8c7d9b18eaca059"
+    },
+    {
+      "$oid": "63737f03b8c7d9b18eaca05e"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635d2e1b8cbd48e3ed7d53b3"
+  },
+  "name": "Lee Sin",
+  "title": "Thầy Tu Mù",
+  "category": "Đấu Sĩ",
+  "country": "Ionia",
+  "level": "Trung Bình",
+  "content": "Bậc thầy võ thuật cổ truyền Ionia, Lee Sin, là một chiến binh sử dụng tinh hoa của loài rồng để đối mặt với bất kỳ thử thách nào. Dù bị mất đi thị giác nhiều năm trước, vị thầy tu này vẫn dành cả đời bảo vệ quê hương chống lại bất kỳ ai dám phá vỡ sự cân bằng thiêng liêng của nó. Kẻ địch đánh giá thấp phong thái thiền định của anh sẽ sớm phải chịu những cú đấm bỏng cháy và những cú đá xoáy rực lửa.",
+  "avatar": "avatar_LeeSin_0.jpg",
+  "skins": [
+    {
+      "$oid": "63737504b8c7d9b18eac9f2d"
+    },
+    {
+      "$oid": "63737b72b8c7d9b18eac9fe2"
+    },
+    {
+      "$oid": "63737ba6b8c7d9b18eac9fe7"
+    },
+    {
+      "$oid": "63737bc4b8c7d9b18eac9fec"
+    },
+    {
+      "$oid": "63737bd8b8c7d9b18eac9ff1"
+    },
+    {
+      "$oid": "63737bf5b8c7d9b18eac9ff6"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635d31d48cbd48e3ed7d53b6"
+  },
+  "name": "Teemo",
+  "title": "Trinh Sát Nhanh Nhẹn",
+  "category": "Xạ Thủ",
+  "country": "Bandle",
+  "level": "Trung Bình",
+  "content": "Không chùn bước dù là trước những trở ngại cam go nhất, Teemo trinh sát bằng hứng thú vô bờ và tinh thần vui vẻ. Là một Yordle trong danh dự, cậu tự hào tuân theo Điều Lệ Đội Trinh Sát Bandle, đôi khi quá hăm hở đến nỗi không cần biết đến những hậu quả của hành động của mình. Dù nhiều người vẫn đặt dấu hỏi về sự tồn tại của Đội Trinh Sát, nhưng có một điều chắc chắn: đừng đùa với Teemo.",
+  "avatar": "avatar_Teemo_0.jpg",
+  "skins": [
+    {
+      "$oid": "637375c7b8c7d9b18eac9f55"
+    },
+    {
+      "$oid": "63737e5cb8c7d9b18eaca040"
+    },
+    {
+      "$oid": "63737e74b8c7d9b18eaca045"
+    },
+    {
+      "$oid": "63737e93b8c7d9b18eaca04a"
+    },
+    {
+      "$oid": "63737ea6b8c7d9b18eaca04f"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635d325b8cbd48e3ed7d53b9"
+  },
+  "name": "Kayn",
+  "title": "Tử Thần Bóng Tối",
+  "category": "Đấu Sĩ",
+  "country": "Piltover",
+  "level": "Khó",
+  "content": "Môn đồ xuất sắc của ma thuật hắc ám Sheida Kayn không ngừng chiến đấu để giành lấy định mệnh chân chính – để một ngày dẫn dắt Hội Bóng Tối thống trị Ionia. Hắn liều lĩnh sử dụng thanh vũ khí có tri giác Rhaast, mặc kệ việc nó liên tục gặm nhấm thể chất và tinh thần của mình. Sẽ chỉ có hai kết cục khả dĩ xảy ra: hoặc Kayn chiến thắng bằng ý chí sắt đá… hoặc lưỡi hái tà ác thôn tính hắn hoàn toàn, mở đường cho sự hủy diệt trên toàn Runeterra.",
+  "avatar": "avatar_Kayn_0.jpg",
+  "skins": [
+    {
+      "$oid": "63737524b8c7d9b18eac9f37"
+    },
+    {
+      "$oid": "63737a76b8c7d9b18eac9fbb"
+    },
+    {
+      "$oid": "63737a99b8c7d9b18eac9fc0"
+    },
+    {
+      "$oid": "63737ab7b8c7d9b18eac9fc9"
+    },
+    {
+      "$oid": "63737acdb8c7d9b18eac9fce"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635d330d9eff36b99f42fca3"
+  },
+  "name": "Seraphine",
+  "title": "Ca Sĩ Mộng Mơ",
+  "category": "Pháp Sư",
+  "country": "Piltover",
+  "level": "Dễ",
+  "content": "Sinh ra ở thành phố Piltover dù có cha mẹ là người Zaun, Seraphine sở hữu thiên bẩm lắng nghe linh hồn của những người khác—thế giới với cô là một khúc ca, và cô đáp lại lời ca ấy. Dù những âm thanh đó đã từng khiến cô choáng ngợp trong thời niên thiếu, nhưng giờ đây chúng là nguồn cảm hứng cho cô, khi cô biến những âm thanh hỗn loạn thành một bản hòa tấu. Cô trình diễn tại nơi thành phố bên dưới, để nhắc nhở những cư dân ở đây rằng họ không cô độc, và họ mạnh mẽ hơn khi đoàn kết cùng nhau, và trong mắt cô, tiềm năng trong họ là vô tận.",
+  "avatar": "avatar_Seraphine_0.jpg",
+  "skins": [
+    {
+      "$oid": "637375aeb8c7d9b18eac9f50"
+    },
+    {
+      "$oid": "63737d60b8c7d9b18eaca01d"
+    },
+    {
+      "$oid": "63737d80b8c7d9b18eaca022"
+    },
+    {
+      "$oid": "63737da2b8c7d9b18eaca027"
+    },
+    {
+      "$oid": "63737dcab8c7d9b18eaca02c"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635d34739eff36b99f42fca9"
+  },
+  "name": "Kled",
+  "title": "Kị Sĩ Cáu Kỉnh",
+  "category": "Đấu Sĩ",
+  "country": "",
+  "level": "Trung Bình",
+  "content": "Là một chiến binh can đảm mà cáu kỉnh, gã Yordle có tên Kled đại diện cho sự anh dũng đến điên cuồng của Noxus. Hắn là biểu tượng được binh lính đế quốc yêu mến, bị các sĩ quan nghi ngờ, và bị giới quý tộc ghét bỏ. Nhiều người quả quyết rằng Kled đã chiến đấu trong mọi chiến dịch được phát động, đã \"nhận\" mọi tước hiệu quân đội, và chưa một lần lui bước. Dù tính chính xác vẫn còn là dấu hỏi, song có một phần không ai có thể phủ nhận: xung trận trên lưng con thú cưỡi thiếu tin cậy, Kled đánh và đánh để bảo vệ những gì thuộc về hắn... đồng thời lấy đi bất kỳ thứ gì hắn chạm tới được.",
+  "avatar": "avatar_Kled_0.jpg",
+  "skins": [
+    {
+      "$oid": "63737560b8c7d9b18eac9f46"
+    },
+    {
+      "$oid": "63737b12b8c7d9b18eac9fd3"
+    },
+    {
+      "$oid": "63737b2cb8c7d9b18eac9fd8"
+    },
+    {
+      "$oid": "63737b49b8c7d9b18eac9fdd"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635d35be490a975521f2296b"
+  },
+  "name": "Miss Fortune",
+  "title": "Thợ Săn Tiền Thưởng",
+  "category": "Xạ Thủ",
+  "country": "Belgewater",
+  "level": "Dễ",
+  "content": "Một thuyền trưởng Bilgewater nổi tiếng về nhan sắc nhưng cũng đáng sợ về mặt tàn nhẫn, Sarah Fortune bật hẳn lên giữa đám tội phạm khét tiếng của thành phố cảng. Khi còn nhỏ, cô đã chứng kiến vua hải tặc Gangplank sát hại gia đình mình—và đã trả thù một cách tàn bạo sau đó khi thổi tung kỳ hạm của hắn khi hắn vẫn còn trên boong. Những ai đánh giá thấp cô sẽ phải đối mặt với một đối thủ mưu mẹo và khó đoán... và nhiều khả năng là một hai viên đạn vào bụng.",
+  "avatar": "avatar_MissFortune_00.jpg",
+  "skins": [
+    {
+      "$oid": "63737577b8c7d9b18eac9f4b"
+    },
+    {
+      "$oid": "63737c47b8c7d9b18eac9fff"
+    },
+    {
+      "$oid": "63737c63b8c7d9b18eaca004"
+    },
+    {
+      "$oid": "63737c93b8c7d9b18eaca009"
+    },
+    {
+      "$oid": "63737cadb8c7d9b18eaca00e"
+    },
+    {
+      "$oid": "63737cddb8c7d9b18eaca013"
+    },
+    {
+      "$oid": "63737cf5b8c7d9b18eaca018"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63737759b8c7d9b18eac9f67"
+  },
+  "name": "Aatrox",
+  "title": "Quỷ Kiếm Darkin",
+  "category": "Đấu Sĩ",
+  "country": "Shurima",
+  "level": "Trung Bình",
+  "content": "Từng là những người bảo hộ cao quý của Shurima để chống lại Hư Không, Aatrox cùng đồng bọn cuối cùng lại trở thành một mối hiểm họa còn lớn hơn đối với cả Runeterra, và chỉ bị đánh bại bằng món phép thuật khôn ngoan của nhân loại. Nhưng sau nhiều thế kỉ bị giam cầm, Aatrox là kẻ đầu tiên một lần nữa tìm về với tự do, bằng cách vấy bẩn và biến đổi những kẻ ngu ngốc dám cầm thử thứ vũ khí ma thuật chứa đựng linh hồn hắn. Giờ đây, với da thịt chiếm đoạt được, hắn quay trở lại Runeterra trong một hình hài khủng khiếp tương tự trước đây, tìm kiếm sự tàn sát và trả món hận thù năm xưa.",
+  "avatar": "avatar_Aatrox_0.jpg",
+  "skins": [
+    {
+      "$oid": "637377e0b8c7d9b18eac9f6c"
+    },
+    {
+      "$oid": "637379f1b8c7d9b18eac9fac"
+    },
+    {
+      "$oid": "63737a1eb8c7d9b18eac9fb1"
+    },
+    {
+      "$oid": "63737a33b8c7d9b18eac9fb6"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6373781db8c7d9b18eac9f76"
+  },
+  "name": "Sett",
+  "title": "Đại Ca",
+  "category": "Đấu Sĩ",
+  "country": "Ionia",
+  "level": "Dễ",
+  "content": "Sett, thủ lĩnh thế giới ngầm Ionia, đã nổi lên sau chiến tranh Noxus. Ban đầu, hắn chỉ là một võ sĩ trong đấu trường Navori, nhưng nhanh chóng nổi danh nhờ sức mạnh cùng sự lỳ đòn của mình. Sau khi lọt vào hàng ngũ dân quân, Sett dùng cơ bắp để leo tới đỉnh cao, thậm chí kiểm soát luôn những đấu trường nơi hắn từng lăn lộn.",
+  "avatar": "avatar_Sett_0.jpg",
+  "skins": [
+    {
+      "$oid": "63737834b8c7d9b18eac9f7c"
+    },
+    {
+      "$oid": "63737df6b8c7d9b18eaca031"
+    },
+    {
+      "$oid": "63737e0bb8c7d9b18eaca036"
+    },
+    {
+      "$oid": "63737e2bb8c7d9b18eaca03b"
+    }
+  ],
+  "__v": 0
+}]
